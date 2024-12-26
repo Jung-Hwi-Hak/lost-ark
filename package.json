@@ -1,0 +1,55 @@
+{
+  "name": "lostark",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tanstack/react-query": "^5.62.3",
+    "@tanstack/react-query-devtools": "^5.62.3",
+    "axios": "^1.7.9",
+    "cra-template": "1.2.0",
+    "craco": "^0.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.13",
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
+    "zustand": "^5.0.2"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "format": "prettier --write --cache src/**/*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/axios": "^0.14.4",
+    "@types/react": "^19.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.13.0",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.18.0"
+  }
+}
