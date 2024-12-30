@@ -1,3 +1,5 @@
+import SearchCharacterInput from '@components/inputs/searchCharacter/SearchCharacterInput.index';
+
 /**
  * @title 메인페이지
  *
@@ -8,7 +10,7 @@
 function MainPage() {
 	return (
 		<div>
-			<div style={{ width: '50%', height: 1000, backgroundColor: 'blue' }} />
+			<SearchCharacterInput />
 		</div>
 	);
 }

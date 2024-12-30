@@ -6,7 +6,8 @@ const theme = {
 
 	// ${({theme}) => theme.background.컬러이름}
 	background: {
-		default: '#1C1D22',
+		default: '#121518',
+		section: '#1C1D22',
 		main: '#A6FF4D',
 	},
 };

@@ -10,6 +10,7 @@ function AppRoutes() {
 		<Routes>
 			<Route path="/*" element={<Error404 />} />
 			<Route path="/" element={<MainPage />} />
+			<Route path="/home/:id" element={<HomePage />} />
 			<Route path="/home" element={<HomePage />} />
 		</Routes>
 	);

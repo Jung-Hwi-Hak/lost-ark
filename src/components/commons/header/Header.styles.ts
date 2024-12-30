@@ -2,11 +2,14 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
 	position: fixed;
-	width: 1336px;
-	background-color: red;
+	//width: 1336px;
+	width: 100%;
+	background-color: ${({ theme }) => theme.background.section};
 	height: 105px;
-	left: 50%;
-	transform: translate(-50%, 0);
+`;
+export const Wrap = styled.div`
+	width: 1336px;
+	margin: 0 auto;
 `;
 
 export const headerSecond = styled.div`
@@ -23,8 +26,10 @@ export const Nav = styled.nav``;
 export const NavUl = styled.ul`
 	display: flex;
 	font-size: 1.2rem;
-	font-weight: bold;
-	color: #999ba4;
+	font-weight: 700;
+	color: #767c8d;
+	//color: pink;
+
 	& * {
 		box-sizing: border-box;
 		border-bottom: 1px solid ${({ theme }) => theme.background.default};

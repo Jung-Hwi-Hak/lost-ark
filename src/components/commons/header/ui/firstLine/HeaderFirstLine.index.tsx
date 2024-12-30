@@ -1,4 +1,5 @@
 import * as S from '@components/commons/header/ui/firstLine/HeaderFirstLine.styles';
+import { HeaderFirstLineHooks } from '@components/commons/header/ui/firstLine/hooks/HeaderFirstLineHooks';
 
 /**
  * @title 헤더 첫번째 라인 - 로고 및 꾸밈 또는 안내?? 정도 할 예정
@@ -8,10 +9,11 @@ import * as S from '@components/commons/header/ui/firstLine/HeaderFirstLine.styl
  * */
 
 function HeaderFirstLine() {
+	const { onHandleClickLogo } = HeaderFirstLineHooks();
 	return (
 		<S.Wrap>
 			{/* 로고 이미지 */}
-			<S.LogoImg />
+			<S.LogoImg onClick={onHandleClickLogo} />
 			{/* 로고 폴더 gif */}
 			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style={{ color: '#FFF' }}>
 				<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">

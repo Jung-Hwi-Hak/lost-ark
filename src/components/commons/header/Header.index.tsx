@@ -10,22 +10,24 @@ import HeaderFirstLine from '@components/commons/header/ui/firstLine/HeaderFirst
 function Header() {
 	return (
 		<S.Header>
-			{/* 헤더 첫번째 라인 */}
-			<HeaderFirstLine />
-			{/* 헤더 두번째 라인 */}
-			<S.headerSecond>
-				<S.NavWrap>
-					<S.Nav>
-						<S.NavUl>
-							<S.NavLi>길드</S.NavLi>
-							<S.NavLi>랭킹</S.NavLi>
-							<S.NavLi>도도</S.NavLi>
-							<S.NavLi>라라</S.NavLi>
-							<S.NavLi>라라</S.NavLi>
-						</S.NavUl>
-					</S.Nav>
-				</S.NavWrap>
-			</S.headerSecond>
+			<S.Wrap>
+				{/* 헤더 첫번째 라인 */}
+				<HeaderFirstLine />
+				{/* 헤더 두번째 라인 */}
+				<S.headerSecond>
+					<S.NavWrap>
+						<S.Nav>
+							<S.NavUl>
+								<S.NavLi>길드</S.NavLi>
+								<S.NavLi>랭킹</S.NavLi>
+								<S.NavLi>도도</S.NavLi>
+								<S.NavLi>라라</S.NavLi>
+								<S.NavLi>라라</S.NavLi>
+							</S.NavUl>
+						</S.Nav>
+					</S.NavWrap>
+				</S.headerSecond>
+			</S.Wrap>
 		</S.Header>
 	);
 }
