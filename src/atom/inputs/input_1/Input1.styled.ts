@@ -6,7 +6,9 @@ export const Input = styled.input`
 	font-weight: 700;
 	padding: 0.5rem;
 	outline: none;
-	background-color: ${({ theme }) => theme.background.section};
+	background-color: transparent;
+	//background-color: ${({ theme }) => theme.background.section};
+
 	color: #767c8d;
 
 	&:focus {
