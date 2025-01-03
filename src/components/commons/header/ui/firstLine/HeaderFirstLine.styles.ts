@@ -4,7 +4,7 @@ export const Wrap = styled.div`
 	height: 65px;
 	display: flex;
 	align-items: center;
-	border-bottom: 2px solid #101114;
+	//border-bottom: 2px solid #101114;
 `;
 
 /* 로고 */

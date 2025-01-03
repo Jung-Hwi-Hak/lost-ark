@@ -4,8 +4,15 @@ import styled, { createGlobalStyle } from 'styled-components';
  * reset css 적용
  * */
 export const GlobalStyles = createGlobalStyle`
+		*{
+				font-family: "Nanum Gothic" ,sans-serif;
+		}
     html{
+				font-size: 10px;
 				background-color: #1C1D22;
+		}
+		hr{
+				margin: 0;
 		}
 		
 		html, body, div, span, applet, object, iframe,
@@ -24,8 +31,6 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 10px;
-        font: inherit;
         vertical-align: baseline;
 				box-sizing: border-box;
     }

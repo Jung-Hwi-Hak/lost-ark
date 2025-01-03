@@ -1,4 +1,4 @@
-import SearchCharacterInput from '@components/inputs/searchCharacter/SearchCharacterInput.index';
+// import SearchCharacterInput from '@components/inputs/searchCharacter/SearchCharacterInput.index';
 
 /**
  * @title 메인페이지
@@ -10,7 +10,8 @@ import SearchCharacterInput from '@components/inputs/searchCharacter/SearchChara
 function MainPage() {
 	return (
 		<div>
-			<SearchCharacterInput />
+			hihihi
+			{/*<SearchCharacterInput />*/}
 		</div>
 	);
 }

@@ -10,9 +10,10 @@ import HeaderFirstLine from '@components/commons/header/ui/firstLine/HeaderFirst
 function Header() {
 	return (
 		<S.Header>
-			<S.Wrap>
+			<S.Container>
 				{/* 헤더 첫번째 라인 */}
 				<HeaderFirstLine />
+				<hr style={{ width: '100%', position: 'absolute', right: '0' }} />
 				{/* 헤더 두번째 라인 */}
 				<S.headerSecond>
 					<S.NavWrap>
@@ -27,7 +28,7 @@ function Header() {
 						</S.Nav>
 					</S.NavWrap>
 				</S.headerSecond>
-			</S.Wrap>
+			</S.Container>
 		</S.Header>
 	);
 }

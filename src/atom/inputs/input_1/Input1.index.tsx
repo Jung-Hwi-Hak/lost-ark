@@ -1,5 +1,5 @@
-import * as S from './index.styles';
-import { Input1I } from './index.types';
+import * as S from '@atom/inputs/input_1/Input1.styled';
+import { Input1I } from '@atom/inputs/input_1/Input1.types';
 
 /**
  * @title Input_1 Atom

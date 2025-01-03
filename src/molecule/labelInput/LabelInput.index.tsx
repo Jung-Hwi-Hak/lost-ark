@@ -1,7 +1,8 @@
+import * as S from '@molecule/labelInput/LabelInput.styled';
+
 import Input1Index from '../../atom/inputs/input_1/Input1.index';
 import Label1 from '../../atom/labels/label_1/Label1.index';
 
-import * as S from '@molecule/labelInput/index.styled';
 /**
  * @title label + input molecule
  *
