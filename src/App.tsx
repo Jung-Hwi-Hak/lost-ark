@@ -30,7 +30,10 @@ function App() {
 					<title>React-Helmet</title>
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
-					<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+					<link
+						href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
+						rel="stylesheet"
+					/>
 				</Helmet>
 				<ThemeProvider theme={theme}>
 					<Wrap>

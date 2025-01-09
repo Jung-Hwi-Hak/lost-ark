@@ -12,6 +12,7 @@ export const LogoImg = styled.img.attrs({
 	src: '/logo.svg',
 	alt: 'logo',
 })`
+	width: 10rem;
 	cursor: pointer;
 	margin-right: 5px;
 `;
