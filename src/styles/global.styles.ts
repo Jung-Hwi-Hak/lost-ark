@@ -4,12 +4,32 @@ import styled, { createGlobalStyle } from 'styled-components';
  * reset css 적용
  * */
 export const GlobalStyles = createGlobalStyle`
+    /* 전체 스크롤바 */
+    ::-webkit-scrollbar {
+        width: 12px; /* 세로 스크롤바의 너비 */
+        height: 12px; /* 가로 스크롤바의 높이 */
+    }
+
+    /* 스크롤바의 배경 */
+    ::-webkit-scrollbar-track {
+        background-color: #1C1D22;
+				//border-radius: 5px;
+				//margin: 0.5rem 0;
+    }
+
+    /* 스크롤바의 핸들 (끌어당기는 부분) */
+    ::-webkit-scrollbar-thumb {
+        background-color: #D0FDA0; /* 핸들의 기본 색상 */
+        border-radius: 5px;
+        border: 3px solid #1C1D22; /* 핸들 주변의 여백 */
+    }
+
 		*{
 				font-family: "Nanum Gothic" ,sans-serif;
 		}
     html{
 				font-size: 10px;
-				background-color: #1C1D22;
+				background-color: #121518;
 		}
 		hr{
 				margin: 0;
@@ -79,65 +99,4 @@ export const Wrap = styled.div`
 	background-color: ${({ theme }) => theme.background.default};
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
-`;
-
-type MaxWrapType = {
-	innerWidth: number;
-};
-
-export const MaxWrap = styled.div<MaxWrapType>`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	width: 1336px;
-	height: 100vh;
-	margin: 0 auto;
-	background-color: ${({ theme }) => theme.background.default};
-	font-size: 1rem;
-	overflow-x: hidden;
-
-	& > * {
-		min-width: 1336px;
-	}
-
-	/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1335px)*/
-	@media all and (max-width: 1024px) {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		//width: 100vw;
-		max-width: ${(props) => (props.innerWidth ? `${props.innerWidth}px` : '100%')};
-		height: 100vh;
-		margin: 0 auto;
-		background-color: ${({ theme }) => theme.background.default};
-		font-size: 1rem;
-
-		& > * {
-			min-width: ${(props) => (props.innerWidth ? `${props.innerWidth}px` : '100px')};
-			max-width: ${(props) => (props.innerWidth ? `${props.innerWidth}px` : '100px')};
-			background-color: blue;
-		}
-	}
-
-	/* 테블릿 가로 (해상도 768px ~ 1023px)*/
-	// @media all and (min-width: 768px) and (max-width: 979px) {
-	// 	position: relative;
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	width: 768px;
-	// 	height: 100vh;
-	// 	margin: 0 auto;
-	// 	background-color: ${({ theme }) => theme.background.default};
-	// 	font-size: 1rem;
-	//
-	// 	& > * {
-	// 		min-width: 768px;
-	// 	}
-	// }
-
-	/* 모바일 세로 (해상도 ~ 479px)*/
-	//@media all and (max-width: 479px) {
-	//	//스타일 입력
-	//}
 `;

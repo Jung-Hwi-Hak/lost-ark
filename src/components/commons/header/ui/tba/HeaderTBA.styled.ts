@@ -14,7 +14,7 @@ export const TbaBox = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: ${({ theme }) => theme.colors.white};
+	color: ${({ theme }) => theme.fonts.white};
 
 	font-size: 1.4rem;
 	font-weight: 900;

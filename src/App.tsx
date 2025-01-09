@@ -9,6 +9,9 @@ import Header from '@components/commons/header/Header.index';
 // import Footer from '@components/commons/footer/Footer.index';
 import theme from '@styles/theme';
 import { GlobalStyles, Wrap } from '@styles/global.styles';
+import Body from '@components/commons/body/Body.index';
+import AppRoutes from '@routes/AppRoutes';
+import Footer from '@components/commons/footer/Footer.index';
 
 // import AppRoutes from './routes/AppRoutes';
 
@@ -38,10 +41,10 @@ function App() {
 				<ThemeProvider theme={theme}>
 					<Wrap>
 						<Header />
-						{/*						<Body>
+						<Body>
 							<AppRoutes />
-						</Body>*/}
-						{/*<Footer />*/}
+						</Body>
+						<Footer />
 					</Wrap>
 				</ThemeProvider>
 			</BrowserRouter>
