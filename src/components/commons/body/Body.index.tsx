@@ -6,7 +6,7 @@ interface BodyI {
 }
 
 function Body({ children }: BodyI) {
-	return <S.BodyWrap>{children}</S.BodyWrap>;
+	return <S.Body>{children}</S.Body>;
 }
 
 export default Body;

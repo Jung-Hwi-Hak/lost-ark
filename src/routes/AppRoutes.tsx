@@ -1,7 +1,7 @@
 import * as React from 'react';
 import HomePage from '@pages/Home';
-import MainPage from '@pages/MainPage';
 import Error404 from '@pages/Error404';
+import MainPage from '@pages/main/MainPage.index';
 
 import { Route, Routes } from 'react-router-dom';
 

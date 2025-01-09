@@ -12,7 +12,7 @@ export const MenuUl = styled.ul`
 	display: flex;
 	font-size: 1.6rem;
 	font-weight: 700;
-	color: ${({ theme }) => theme.colors.gray};
+	color: ${({ theme }) => theme.fonts.gray};
 	gap: 0.75rem;
 
 	& * {
@@ -20,7 +20,7 @@ export const MenuUl = styled.ul`
 	}
 
 	& *:hover {
-		color: ${({ theme }) => theme.colors.white};
+		color: ${({ theme }) => theme.fonts.white};
 	}
 `;
 
@@ -33,6 +33,6 @@ export const MenuLi = styled.li`
 	box-sizing: border-box;
 
 	&:hover {
-		border-color: ${({ theme }) => theme.colors.point};
+		border-color: ${({ theme }) => theme.fonts.point};
 	}
 `;
