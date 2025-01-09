@@ -5,31 +5,40 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getCharacterSiblings } from '@apis/queries/openapi/getCharacterInfo';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function HomePage() {
+	const navigate = useNavigate();
+
+	const { id } = useParams();
+
 	const [searchUserNm, setSearchUserNm] = useState<string>('');
 
 	// ==============================
 	// 유저 모든 캐릭터 정보 Query
 	// ==============================
-	const { data, status } = useQuery({
+	const { data } = useQuery({
 		queryFn: () => getCharacterSiblings({ searchUserNm }),
 		queryKey: ['searchUserNm', searchUserNm],
 		enabled: !!searchUserNm,
 	});
 
 	useEffect(() => {
-		if (status !== 'success') return;
-
-		console.log(data);
-	}, [status]);
+		if (id) {
+			setSearchUserNm(id);
+		}
+	}, [id]);
 
 	const handleMemoCheck = (e: React.FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
 		if (e.target[0].value) {
-			setSearchUserNm(e.target[0].value);
+			navigate(`/home/${e.target[0].value}`);
 		}
 	};
+
+	if (!id) {
+		return <div>헿....</div>;
+	}
 
 	return (
 		<div>

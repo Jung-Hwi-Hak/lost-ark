@@ -4,7 +4,18 @@ import styled, { createGlobalStyle } from 'styled-components';
  * reset css 적용
  * */
 export const GlobalStyles = createGlobalStyle`
-    html, body, div, span, applet, object, iframe,
+		*{
+				font-family: "Nanum Gothic" ,sans-serif;
+		}
+    html{
+				font-size: 10px;
+				background-color: #1C1D22;
+		}
+		hr{
+				margin: 0;
+		}
+		
+		html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
     del, dfn, em, img, ins, kbd, q, s, samp,
@@ -16,12 +27,10 @@ export const GlobalStyles = createGlobalStyle`
     article, aside, canvas, details, embed,
     figure, figcaption, footer, header, hgroup,
     menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
+    time, mark, audio, video,input {
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 10px;
-        font: inherit;
         vertical-align: baseline;
 				box-sizing: border-box;
     }
@@ -70,7 +79,7 @@ export const Wrap = styled.div`
 	background-color: ${({ theme }) => theme.background.default};
 	display: flex;
 	flex-direction: column;
-	//overflow-x: hidden;
+	height: 100vh;
 `;
 
 type MaxWrapType = {
