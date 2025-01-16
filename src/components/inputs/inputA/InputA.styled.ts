@@ -15,6 +15,7 @@ export const Input = styled.input`
 	border-radius: 0.5rem;
 	padding: 0 1.5rem;
 	font-size: 1.4rem;
+	font-weight: 700;
 	color: ${({ theme }) => theme.fonts.white};
 `;
 

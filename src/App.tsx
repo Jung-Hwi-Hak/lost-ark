@@ -11,7 +11,6 @@ import theme from '@styles/theme';
 import { GlobalStyles, Wrap } from '@styles/global.styles';
 import Body from '@components/commons/body/Body.index';
 import AppRoutes from '@routes/AppRoutes';
-import Footer from '@components/commons/footer/Footer.index';
 
 // import AppRoutes from './routes/AppRoutes';
 
@@ -44,7 +43,7 @@ function App() {
 						<Body>
 							<AppRoutes />
 						</Body>
-						<Footer />
+						{/*<Footer />*/}
 					</Wrap>
 				</ThemeProvider>
 			</BrowserRouter>

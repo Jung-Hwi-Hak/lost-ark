@@ -1,36 +1,44 @@
 /* eslint-disable no-unused-vars */
 
 import * as S from '@components/inputs/inputA/InputA.styled';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 interface InputAI {
-	propInputS?: boolean;
-	setPropInputS?: React.Dispatch<React.SetStateAction<boolean>>;
+	focusInputS?: boolean; // input focus 상태 state
+	setFocusInputS?: React.Dispatch<React.SetStateAction<boolean>>;
+	placeholder?: string;
+	label?: string;
 }
 
+/**
+ * @title 인풋 A - focus , blur 기능 및 라벨 있음
+ *
+ * @author 정휘학
+ * @since 2025.01.09
+ * */
 function InputA(props: InputAI) {
-	const { propInputS, setPropInputS } = props;
+	const { focusInputS, setFocusInputS, label, placeholder } = props;
 
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
-		if (propInputS) {
+		if (focusInputS) {
 			inputRef.current.focus();
 		}
 
-		if (!propInputS) {
+		if (!focusInputS) {
 			inputRef.current.value = '';
 			inputRef.current.blur();
 		}
-	}, [propInputS]);
+	}, [focusInputS]);
 
 	const handleFocusInput = () => {
-		if (setPropInputS) setPropInputS(true);
+		if (setFocusInputS) setFocusInputS(true);
 	};
 
-	const handleBlurInput = () => {
-		if (setPropInputS) setPropInputS(false);
-	};
+	// const handleBlurInput = () => {
+	// 	if (setFocusInputS) setFocusInputS(false);
+	// };
 
 	return (
 		<S.Wrap>
@@ -38,13 +46,15 @@ function InputA(props: InputAI) {
 				ref={inputRef}
 				maxLength={12}
 				onFocus={handleFocusInput}
-				onBlur={handleBlurInput}
-				placeholder="캐릭터 검색"
+				// onBlur={handleBlurInput}
+				placeholder={placeholder}
 			/>
 			<S.ItemBox>
-				<S.Label>
-					<span>검색&nbsp;&nbsp;/</span>
-				</S.Label>
+				{label ? (
+					<S.Label>
+						<span>{label}</span>
+					</S.Label>
+				) : null}
 				<S.SVG>
 					<path
 						d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
@@ -60,8 +70,10 @@ function InputA(props: InputAI) {
 }
 
 InputA.defaultProps = {
-	propInputS: null,
-	setPropInputS: null,
+	focusInputS: null,
+	setFocusInputS: null,
+	placeholder: '',
+	label: '',
 };
 
 export default InputA;
