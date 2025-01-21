@@ -18,7 +18,7 @@ function HomePage() {
 	// 유저 모든 캐릭터 정보 Query
 	// ==============================
 	const { data } = useQuery({
-		queryFn: () => getCharacterSiblings({ searchUserNm }),
+		queryFn: () => getCharacterSiblings({ characterNm: searchUserNm }),
 		queryKey: ['searchUserNm', searchUserNm],
 		enabled: !!searchUserNm,
 	});

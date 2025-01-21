@@ -48,6 +48,11 @@ export const InputAHooks = () => {
 		};
 	}, []);
 
+	// /* ========== URL 변경될 시 캐릭터 검색 input blur ========== */
+	// useEffect(() => {
+	// 	setFocusSearchInputS(false);
+	// }, [pathname]);
+
 	return {
 		focusSearchInputS,
 		setFocusSearchInputS,
