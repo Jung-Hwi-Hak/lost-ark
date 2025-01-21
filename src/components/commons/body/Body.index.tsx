@@ -23,7 +23,7 @@ function Body({ children }: BodyI) {
 							placeholder="캐릭터 검색"
 							label={inputAHooks.focusSearchInputS ? 'ESC 닫기' : '/ 검색'}
 						/>
-						<S.SearchBehind className={inputAHooks.focusSearchInputS ? 'focus' : 'blur'}>
+						<S.SearchBehind className={inputAHooks.focusSearchInputS ? 'focus box_shadow' : 'blur'}>
 							<div className="history item">
 								<span>히스토리</span>
 								<ul>

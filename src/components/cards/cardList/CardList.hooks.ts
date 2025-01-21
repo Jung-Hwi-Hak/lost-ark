@@ -32,6 +32,7 @@ export const CardListHooks = () => {
 		console.log(data);
 
 		let itemUrl = '';
+		let itemName = '';
 		let imgUrl = '';
 		let contentsName = '';
 		let beforeImg = '';
@@ -46,37 +47,43 @@ export const CardListHooks = () => {
 
 		for (let i = 0; i < data.length; i += 1) {
 			// 1. Chaos Gate and Field Boss 상태 업데이트
-			if (data[i].CategoryName === '카오스게이트' && isTodayA(data[i].StartTimes[0])) {
-				bossCaosUpdates.caos.imgUrl = data[i].ContentsIcon;
-				bossCaosUpdates.caos.boolean = true;
-			}
-			if (data[i].CategoryName === '필드보스' && isTodayA(data[i].StartTimes[0])) {
-				bossCaosUpdates.boss.imgUrl = data[i].ContentsIcon;
-				bossCaosUpdates.boss.boolean = true;
-			}
+			for (let z = 0; z < data[i].StartTimes.length; z += 1) {
+				if (data[i].CategoryName === '카오스게이트' && isTodayA(data[i].StartTimes[z])) {
+					bossCaosUpdates.caos.imgUrl = data[i].ContentsIcon;
+					bossCaosUpdates.caos.boolean = true;
+				}
+				if (data[i].CategoryName === '필드보스' && isTodayA(data[i].StartTimes[z])) {
+					bossCaosUpdates.boss.imgUrl = data[i].ContentsIcon;
+					bossCaosUpdates.boss.boolean = true;
+				}
+				// 2. Island 처리
+				if (data[i].CategoryName === '모험 섬' && isTodayA(data[i].StartTimes[z])) {
+					for (let y = 0; y < data[i].RewardItems[0].Items.length; y += 1) {
+						const item = data[i].RewardItems[0].Items[y];
+						if (item.StartTimes) {
+							for (let x = 0; x < item.StartTimes.length; x += 1) {
+								if (isTodayA(item.StartTimes[x])) {
+									itemUrl = item.Icon;
+									imgUrl = data[i].ContentsIcon;
+									contentsName = data[i].ContentsName;
+									itemName = item.Name;
+									// 평일 처리
+									if (!checkWeekend && beforeImg !== imgUrl) {
+										weekdaysUpdates.push({ imgUrl, itemUrl, contentsName, itemName });
+										beforeImg = imgUrl;
+									}
 
-			// 2. Adventure Island 처리
-			if (data[i].CategoryName === '모험 섬' && isTodayA(data[i].StartTimes[0])) {
-				for (let y = 0; y < data[i].RewardItems[0].Items.length; y += 1) {
-					const item = data[i].RewardItems[0].Items[y];
-					if (item.StartTimes && isTodayA(item.StartTimes[0])) {
-						itemUrl = item.Icon;
-						imgUrl = data[i].ContentsIcon;
-						contentsName = data[i].ContentsName;
-						// 평일 처리
-						if (!checkWeekend && beforeImg !== imgUrl) {
-							weekdaysUpdates.push({ imgUrl, itemUrl, contentsName });
-							beforeImg = imgUrl;
-						}
-
-						// 주말 처리
-						if (checkWeekend && beforeImg !== imgUrl) {
-							if (checkIslandAmTime(item.StartTimes[0])) {
-								amUpdates.push({ imgUrl, itemUrl, contentsName });
-							} else {
-								pmUpdates.push({ imgUrl, itemUrl, contentsName });
+									// 주말 처리
+									if (checkWeekend && beforeImg !== imgUrl) {
+										if (checkIslandAmTime(item.StartTimes[0])) {
+											amUpdates.push({ imgUrl, itemUrl, contentsName, itemName });
+										} else {
+											pmUpdates.push({ imgUrl, itemUrl, contentsName, itemName });
+										}
+										beforeImg = imgUrl;
+									}
+								}
 							}
-							beforeImg = imgUrl;
 						}
 					}
 				}
@@ -104,6 +111,7 @@ export const CardListHooks = () => {
 			am: amUpdates.length > 1 ? amUpdates : prevState.am,
 			pm: pmUpdates.length > 1 ? pmUpdates : prevState.pm,
 		}));
+		console.log('island ===> ', weekdaysUpdates, amUpdates, pmUpdates);
 	}, [data]);
 
 	return {

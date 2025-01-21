@@ -11,9 +11,9 @@ export type BossAndCaosType = {
 };
 
 export type IslandType = {
-	weekdays: { imgUrl: string; itemUrl: string; contentsName: string }[] | null;
-	am: { imgUrl: string; itemUrl: string; contentsName: string }[] | null;
-	pm: { imgUrl: string; itemUrl: string; contentsName: string }[] | null;
+	weekdays: { imgUrl: string; itemUrl: string; contentsName: string; itemName: string }[] | null;
+	am: { imgUrl: string; itemUrl: string; contentsName: string; itemName: string }[] | null;
+	pm: { imgUrl: string; itemUrl: string; contentsName: string; itemName: string }[] | null;
 };
 
 interface CardList {
@@ -74,7 +74,7 @@ function CardList({ title, bossAndCaos, island }: CardList) {
 								<li className="item">
 									<div>
 										<img className="icon" src={item.imgUrl} alt="섬 이미지" />
-										<img className="reward_icon" src={item.itemUrl} alt="보상 이미지" />
+										<img className="reward_icon" src={item.itemUrl} alt="보상 이미지" title={item.itemName} />
 									</div>
 									<span>{item.contentsName}</span>
 								</li>
@@ -90,7 +90,7 @@ function CardList({ title, bossAndCaos, island }: CardList) {
 								{island.am.map((item) => (
 									<li className="item">
 										<img className="icon" src={item.imgUrl} alt="섬 이미지" />
-										<img className="reward_icon" src={item.itemUrl} alt="보상 이미지" />
+										<img className="reward_icon" src={item.itemUrl} alt="보상 이미지" title={item.itemName} />
 									</li>
 								))}
 							</ul>
@@ -99,7 +99,7 @@ function CardList({ title, bossAndCaos, island }: CardList) {
 								{island.pm.map((item) => (
 									<li className="item">
 										<img className="icon" src={item.imgUrl} alt="섬 이미지" />
-										<img className="reward_icon" src={item.itemUrl} alt="보상 이미지" />
+										<img className="reward_icon" src={item.itemUrl} alt="보상 이미지" title={item.itemName} />
 									</li>
 								))}
 							</ul>

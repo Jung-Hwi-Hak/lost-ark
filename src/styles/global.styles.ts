@@ -24,6 +24,9 @@ export const GlobalStyles = createGlobalStyle`
         border: 3px solid #1C1D22; /* 핸들 주변의 여백 */
     }
 
+		.box_shadow{
+        box-shadow: 0 5px 10px -5px;
+		}
 		*{
 				font-family: "Nanum Gothic" ,sans-serif;
 		}
