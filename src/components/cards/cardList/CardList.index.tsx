@@ -24,7 +24,7 @@ interface CardList {
 
 function CardList({ title, bossAndCaos, island }: CardList) {
 	return (
-		<S.Wrap>
+		<S.Wrap className="blog-shadow-dreamy">
 			<S.CardTitle>{title}</S.CardTitle>
 			{/* ================ 필보 & 카게 ================== */}
 			{bossAndCaos ? (

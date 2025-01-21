@@ -17,6 +17,9 @@ function MainPage() {
 	return (
 		<Contents>
 			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
+			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
+			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
+			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
 			{/*<CardList />*/}
 			{/*<CardList />*/}
 		</Contents>

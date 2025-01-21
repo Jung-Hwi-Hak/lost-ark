@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Body = styled.div`
 	margin: 20rem auto 0 auto;
-	padding: 5rem 3.2rem;
+	//padding: 5rem 3.2rem;
 	//background-color: ${({ theme }) => theme.background.section};
 	background-color: ${({ theme }) => theme.background.default};
 	width: 1216px;
