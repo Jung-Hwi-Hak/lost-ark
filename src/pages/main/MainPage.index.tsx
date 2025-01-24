@@ -1,49 +1,28 @@
-/* eslint-disable no-unused-vars */
-
-import * as S from '@pages/main/MainPage.styled';
-import InputA from '@components/inputs/inputA/InputA.index';
-import { useEffect, useState } from 'react';
-import { SearchBehind } from '@pages/main/MainPage.styled';
+import CardList from '@components/cards/cardList/CardList.index';
+import styled from 'styled-components';
+import { CardListHooks } from '@components/cards/cardList/CardList.hooks';
 
 function MainPage() {
-	const [focusSearchInputS, setFocusSearchInputS] = useState<boolean>(false);
+	const Contents = styled.div`
+		display: flex;
+		flex-wrap: wrap;
+		& > div {
+			margin-left: 3rem;
+			margin-bottom: 3rem;
+		}
+	`;
 
-	const handleKeyPress = (event: KeyboardEvent) => {
-		if (event.key === '/') {
-			event.preventDefault();
-			setFocusSearchInputS(true);
-			// 원하는 동작을 여기서 호출
-		}
-		if (event.key === 'Escape') {
-			event.preventDefault();
-			setFocusSearchInputS(false);
-		}
-	};
-	useEffect(() => {
-		document.addEventListener('keydown', handleKeyPress);
-	}, []);
+	const { islandS, bossAndCaosS } = CardListHooks();
 
 	return (
-		<S.Container>
-			<S.SearchWrap>
-				<InputA propInputS={focusSearchInputS} setPropInputS={setFocusSearchInputS} />
-				<SearchBehind className={focusSearchInputS ? 'focus' : 'blur'}>
-					<div className="history item">
-						<span>히스토리</span>
-						<ul>
-							<li>
-								<span>휘쪽</span>
-								<span>1706.6</span>
-							</li>
-							<li>휘쪽</li>
-							<li>휘쪽</li>
-							<li>휘쪽</li>
-						</ul>
-					</div>
-					<div className="favorites item">즐겨찾기</div>
-				</SearchBehind>
-			</S.SearchWrap>
-		</S.Container>
+		<Contents>
+			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
+			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
+			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
+			<CardList title="일정" bossAndCaos={bossAndCaosS} island={islandS} />
+			{/*<CardList />*/}
+			{/*<CardList />*/}
+		</Contents>
 	);
 }
 
